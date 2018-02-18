@@ -25,9 +25,10 @@
 					$images = $con->query($sql);
 					$image = $images->fetch_assoc();
 
-					echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';
+					echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+						<img height="300" width="300" src="'.$image['COVER'].'">
+						<br>'.$structure['STRUCTURE_NAME'].'<br></a>';
 				
-					//}
 				}	
 
 				if($Option == "Tallest Skyscraper"){
@@ -38,13 +39,18 @@
 					;";
 					
 					$structures = mysqli_query($con, $sql);
+					if(!mysqli_query($con, $sql)){
+						echo "sorry nigga";
+					}
 			
 					foreach ($structures as $structure) {	
 						$sql = "SELECT * FROM `agallery`.`structure` S JOIN `agallery`.`image` I
 						ON(S.`IMAGE_ID` = I.`IMAGE_ID`)	WHERE S.`STRUCTURE_ID` = '".$structure['STRUCTURE_ID']."';";
 						$images = $con->query($sql);
 						$image = $images->fetch_assoc();
-						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
+						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+							<img height="300" width="300" src="'.$image['COVER'].'">
+							<br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
 					}
 				}
 			
@@ -52,8 +58,7 @@
 			
 					$sql = "SELECT * FROM `agallery`.`structure` S JOIN `agallery`.`airport` A
 					ON(S.`STRUCTURE_ID` = A.`STRUCTURE_ID`)
-					ORDER BY A.`PASSENGER` DESC limit 5
-					;";
+					ORDER BY A.`PASSENGER` DESC limit 5;";
 					
 					$structures = mysqli_query($con, $sql);
 						
@@ -62,7 +67,9 @@
 						ON(S.`IMAGE_ID` = I.`IMAGE_ID`)	WHERE S.`STRUCTURE_ID` = '".$structure['STRUCTURE_ID']."';";
 						$images = $con->query($sql);
 						$image = $images->fetch_assoc();
-						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
+						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+							<img height="300" width="300" src="'.$image['COVER'].'">
+							<br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
 					}
 				}
 			
@@ -79,7 +86,9 @@
 						ON(S.`IMAGE_ID` = I.`IMAGE_ID`)	WHERE S.`STRUCTURE_ID` = '".$structure['STRUCTURE_ID']."';";
 						$images = $con->query($sql);
 						$image = $images->fetch_assoc();
-						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
+						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+							<img height="300" width="300" src="'.$image['COVER'].'">
+							<br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
 					}
 				}
 				if($Option == "Expensive Stadium"){
@@ -95,7 +104,9 @@
 						ON(S.`IMAGE_ID` = I.`IMAGE_ID`)	WHERE S.`STRUCTURE_ID` = '".$structure['STRUCTURE_ID']."';";
 						$images = $con->query($sql);
 						$image = $images->fetch_assoc();
-						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
+						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+							<img height="300" width="300" src="'.$image['COVER'].'">
+							<br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
 					}
 				}
 				if($Option == "Longest Shopping Mall"){
@@ -111,7 +122,9 @@
 						ON(S.`IMAGE_ID` = I.`IMAGE_ID`)	WHERE S.`STRUCTURE_ID` = '".$structure['STRUCTURE_ID']."';";
 						$images = $con->query($sql);
 						$image = $images->fetch_assoc();
-						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
+						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+							<img height="300" width="300" src="'.$image['COVER'].'">
+							<br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
 					}
 				}
 				if($Option == "Oldest Castle"){
@@ -128,7 +141,9 @@
 						ON(S.`IMAGE_ID` = I.`IMAGE_ID`)	WHERE S.`STRUCTURE_ID` = '".$structure['STRUCTURE_ID']."';";
 						$images = $con->query($sql);
 						$image = $images->fetch_assoc();
-						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
+						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+							<img height="300" width="300" src="'.$image['COVER'].'">
+							<br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
 					}
 				}
 			
@@ -145,7 +160,9 @@
 						ON(S.`IMAGE_ID` = I.`IMAGE_ID`)	WHERE S.`STRUCTURE_ID` = '".$structure['STRUCTURE_ID']."';";
 						$images = $con->query($sql);
 						$image = $images->fetch_assoc();
-						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
+						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+							<img height="300" width="300" src="'.$image['COVER'].'">
+							<br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
 					}
 				}
 			
@@ -161,7 +178,9 @@
 						ON(S.`IMAGE_ID` = I.`IMAGE_ID`)	WHERE S.`STRUCTURE_ID` = '".$structure['STRUCTURE_ID']."';";
 						$images = $con->query($sql);
 						$image = $images->fetch_assoc();
-						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
+						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+							<img height="300" width="300" src="'.$image['COVER'].'">
+							<br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
 					}
 				}
 				if($Option == "Largest Mosque"){
@@ -176,7 +195,9 @@
 						ON(S.`IMAGE_ID` = I.`IMAGE_ID`)	WHERE S.`STRUCTURE_ID` = '".$structure['STRUCTURE_ID']."';";
 						$images = $con->query($sql);
 						$image = $images->fetch_assoc();
-						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
+						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+							<img height="300" width="300" src="'.$image['COVER'].'">
+							<br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
 					}
 				}
 				if($Option == "Oldest Mosque"){
@@ -192,7 +213,9 @@
 						ON(S.`IMAGE_ID` = I.`IMAGE_ID`)	WHERE S.`STRUCTURE_ID` = '".$structure['STRUCTURE_ID']."';";
 						$images = $con->query($sql);
 						$image = $images->fetch_assoc();
-						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
+						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+							<img height="300" width="300" src="'.$image['COVER'].'">
+							<br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
 					}
 				}
 				if($Option == "Oldest Temple"){
@@ -208,7 +231,9 @@
 						ON(S.`IMAGE_ID` = I.`IMAGE_ID`)	WHERE S.`STRUCTURE_ID` = '".$structure['STRUCTURE_ID']."';";
 						$images = $con->query($sql);
 						$image = $images->fetch_assoc();
-						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
+						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+							<img height="300" width="300" src="'.$image['COVER'].'">
+							<br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
 					}
 				}
 				if($Option == "Largest Hotel"){
@@ -223,7 +248,9 @@
 						ON(S.`IMAGE_ID` = I.`IMAGE_ID`)	WHERE S.`STRUCTURE_ID` = '".$structure['STRUCTURE_ID']."';";
 						$images = $con->query($sql);
 						$image = $images->fetch_assoc();
-						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
+						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+							<img height="300" width="300" src="'.$image['COVER'].'">
+							<br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
 					}
 				}
 				if($Option == "Costliest Hotel"){
@@ -238,7 +265,9 @@
 						ON(S.`IMAGE_ID` = I.`IMAGE_ID`)	WHERE S.`STRUCTURE_ID` = '".$structure['STRUCTURE_ID']."';";
 						$images = $con->query($sql);
 						$image = $images->fetch_assoc();
-						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
+						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+							<img height="300" width="300" src="'.$image['COVER'].'">
+							<br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
 					}
 				}
 				if($Option == "Oldest Museum"){
@@ -254,7 +283,9 @@
 						ON(S.`IMAGE_ID` = I.`IMAGE_ID`)	WHERE S.`STRUCTURE_ID` = '".$structure['STRUCTURE_ID']."';";
 						$images = $con->query($sql);
 						$image = $images->fetch_assoc();
-						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'"><img height="300" width="300" src="'.$image['COVER'].'"><br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
+						echo '<a href="View.php?str='.$structure['STRUCTURE_ID'].'">
+							<img height="300" width="300" src="'.$image['COVER'].'">
+							<br>'.$structure['STRUCTURE_NAME'].'<br></a>';		
 					}
 				}
 			?>
